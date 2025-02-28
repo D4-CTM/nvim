@@ -1,11 +1,10 @@
-
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.opt.termguicolors = true
 vim.opt.number = true
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 -- Color scheme
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -24,6 +23,13 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
-vim.keymap.set({"n", "v"}, "Y", [["+y]])
+vim.keymap.set({ "n", "v" }, "Y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
+vim.keymap.set("n", "<leader>w", vim.cmd.w)
+vim.keymap.set("n", "<leader>fe",
+function()
+  vim.cmd.w()
+  vim.cmd.Ex()
+end,
+{})
