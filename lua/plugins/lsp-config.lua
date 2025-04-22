@@ -13,15 +13,14 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"clangd",
-					"tailwindcss",
 					"css_variables",
 					"gopls",
 					"html",
 					"jdtls",
-					"solargraph",
 					"sqls",
 					"ts_ls",
 					"zls",
+                    "pylsp"
 				},
 				automatic_installation = true,
 			})
@@ -35,15 +34,19 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.clangd.setup({ capabilities = capabilities })
-			lspconfig.tailwindcss.setup({ capabilities = capabilities })
 			lspconfig.css_variables.setup({ capabilities = capabilities })
 			lspconfig.gopls.setup({ capabilities = capabilities })
 			lspconfig.html.setup({ capabilities = capabilities })
 			lspconfig.jdtls.setup({ capabilities = capabilities })
-			lspconfig.solargraph.setup({ capabilities = capabilities })
 			lspconfig.sqls.setup({ capabilities = capabilities })
 			lspconfig.ts_ls.setup({ capabilities = capabilities })
-			lspconfig.zls.setup({ capabilities = capabilities })
+			lspconfig.pylsp.setup({ capabilities = capabilities })
+            lspconfig.zls.setup({
+                capabilities = capabilities,
+                on_attach = function(client,  _)
+                  client.server_capabilities.semanticTokensProvider = nil
+                end
+            })
 
 			vim.keymap.set("n", "?", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
