@@ -48,6 +48,14 @@ return {
                 end
             })
 
+            vim.diagnostic.config({
+              virtual_text = true,  -- show inline errors
+              signs = true,         -- show signs in the gutter
+              underline = true,     -- underline problem areas
+              update_in_insert = false,  -- don't update while typing
+              severity_sort = true, -- sort by severity
+            })
+
 			vim.keymap.set("n", "?", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n" }, "<leader>,", vim.lsp.buf.code_action, {})
