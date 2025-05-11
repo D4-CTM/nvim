@@ -9,6 +9,15 @@ return {
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+            -- Function made by chatGPT
+            vim.keymap.set('n', '<leader>pg', function()
+              builtin.live_grep({
+                prompt_title = "Search in POMs",
+                additional_args = function()
+                  return { "--glob=**/pom.xml" }
+                end,
+              })
+            end, { desc = "Telescope pom grep search"})
 		end,
 	},
 	{

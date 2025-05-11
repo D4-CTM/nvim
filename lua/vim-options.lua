@@ -28,7 +28,7 @@ vim.keymap.set({ "n", "v" }, "Y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set("n", "<leader>h", function()
-    vim.cmd([[:%s/\n\{2,}/\r\r/g]])
+    vim.cmd([[:%s/\(\s*\n\)\{2,}/\r\r/g]])
     vim.fn.setreg("/", "")
     vim.cmd("nohlsearch")
 end, {})
