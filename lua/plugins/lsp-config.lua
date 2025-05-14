@@ -6,6 +6,9 @@ return {
 			require("mason").setup()
 		end,
 	},
+    {
+        "mfussenegger/nvim-jdtls"
+    },
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
@@ -13,6 +16,7 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"clangd",
+                    "omnisharp",
 					"css_variables",
 					"gopls",
 					"html",
@@ -35,6 +39,13 @@ return {
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.clangd.setup({ capabilities = capabilities })
 			lspconfig.css_variables.setup({ capabilities = capabilities })
+            lspconfig.omnisharp.setup({
+                cmd = {
+                    "dotnet",
+                    vim.fn.expand("~/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll")
+                },
+                capabilities = capabilities
+            })
 			lspconfig.gopls.setup({ capabilities = capabilities })
 			lspconfig.html.setup({ capabilities = capabilities })
 			lspconfig.jdtls.setup({ capabilities = capabilities })

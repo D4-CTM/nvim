@@ -10,6 +10,7 @@ return {
 				"java",
 				"javascript",
 				"typescript",
+                "c_sharp",
 				"html",
 				"css",
 				"go",
