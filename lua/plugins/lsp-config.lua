@@ -23,7 +23,6 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({ capabilities = capabilities })
             lspconfig.clangd.setup({ capabilities = capabilities })
             lspconfig.css_variables.setup({ capabilities = capabilities })
             lspconfig.omnisharp.setup({
@@ -45,6 +44,19 @@ return {
                     client.server_capabilities.semanticTokensProvider = nil
                 end
             })
+
+            lspconfig.spectral.setup({
+              filetypes = { "yaml", "json" },
+              settings = {
+                spectral = {
+                  run = "onType",
+                  ruleset = {
+                    extend = {"spectral:oas"},
+                  },
+                },
+              },
+            })
+
             lspconfig.angularls.setup({
                 cmd = {
                     "ngserver",
