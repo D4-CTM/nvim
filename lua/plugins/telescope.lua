@@ -18,6 +18,15 @@ return {
                 end,
               })
             end, { desc = "Telescope pom grep search"})
+
+            vim.keymap.set('n', '<leader>jg', function()
+              builtin.live_grep({
+                prompt_title = "Search in java files",
+                additional_args = function()
+                  return { "--glob=**/*.java" }
+                end,
+              })
+            end, { desc = "Telescope java grep search"})
 		end,
 	},
 	{

@@ -28,13 +28,12 @@ return {
             lspconfig.omnisharp.setup({
                 cmd = {
                     "dotnet",
-                    vim.fn.expand("~/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll")
+                    vim.fn.expand("~/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll"),
                 },
-                capabilities = capabilities
+                capabilities = capabilities,
             })
             lspconfig.gopls.setup({ capabilities = capabilities })
             lspconfig.html.setup({ capabilities = capabilities })
-            lspconfig.jdtls.setup({ capabilities = capabilities })
             lspconfig.sqls.setup({ capabilities = capabilities })
             lspconfig.ts_ls.setup({ capabilities = capabilities })
             lspconfig.pylsp.setup({ capabilities = capabilities })
