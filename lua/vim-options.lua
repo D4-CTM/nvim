@@ -84,4 +84,3 @@ end, {
     return { "sqlite3", "postgresql", "mysql" }
   end
 })
-
