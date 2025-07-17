@@ -37,6 +37,7 @@ return {
             lspconfig.sqls.setup({ capabilities = capabilities })
             lspconfig.ts_ls.setup({ capabilities = capabilities })
             lspconfig.pylsp.setup({ capabilities = capabilities })
+            lspconfig.lemminx.setup({ capabilities = capabilities })
             lspconfig.zls.setup({
                 capabilities = capabilities,
                 on_attach = function(client, _)
@@ -88,6 +89,9 @@ return {
                 severity_sort = true,     -- sort by severity
             })
 
+            vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
+            vim.keymap.set("n", "<d", vim.diagnostic.goto_prev, {})
+            vim.keymap.set("n", ">d", vim.diagnostic.goto_next, {})
             vim.keymap.set("n", "?", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
             vim.keymap.set({ "n" }, "<leader>,", vim.lsp.buf.code_action, {})
