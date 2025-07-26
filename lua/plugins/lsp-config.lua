@@ -38,6 +38,7 @@ return {
             lspconfig.ts_ls.setup({ capabilities = capabilities })
             lspconfig.pylsp.setup({ capabilities = capabilities })
             lspconfig.lemminx.setup({ capabilities = capabilities })
+            lspconfig.bashls.setup({ capabilities = capabilities })
             lspconfig.zls.setup({
                 capabilities = capabilities,
                 on_attach = function(client, _)
