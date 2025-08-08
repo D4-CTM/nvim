@@ -7,7 +7,7 @@ return {
 	s("!", {
 		t({ "<!DOCTYPE html>",
 			"<html lang=\"en\">",
-			"\t\t<head>",
+			"\t<head>",
 			"\t\t<meta charset=\"UTF-8\" />",
 			"\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
 			"\t\t<title>" }),

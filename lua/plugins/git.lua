@@ -12,7 +12,6 @@ return {
 					vim.cmd("Git add .")
 					vim.cmd(string.format("Git commit -m \"%s\"", message))
 					vim.cmd("Git push")
-					print("Succesfully pushed the changes")
 				end)
 			end, { desc = "Git commit + push function" })
 
@@ -25,7 +24,6 @@ return {
 
 					vim.cmd("Git add .")
 					vim.cmd(string.format("Git commit -m \"%s\"", message))
-					print("Succesfully commited the changes")
 				end)
 			end, { desc = "Git commit function" })
 
