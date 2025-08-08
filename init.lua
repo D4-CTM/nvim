@@ -16,3 +16,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-configuration")
 require("lazy").setup("plugins")
+require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/lua/snippets" } })
