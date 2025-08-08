@@ -42,15 +42,16 @@ return {
 			})
 
 			vim.lsp.enable({
-				"spectral_language_server",
 				"arduino_language_server",
 				"omnisharp",
+				"spectral",
 				"lemminx",
 				"lua_ls",
 				"clangd",
 				"cssls",
 				"gopls",
 				"jdtls",
+				"ts_ls",
 				"html",
 				"sqls",
 				"zls"
