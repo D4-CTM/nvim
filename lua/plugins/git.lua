@@ -5,7 +5,7 @@ return {
 			vim.keymap.set("n", "<leader>gu", function()
 				vim.ui.input({ prompt = "Commit message" }, function(message)
 					if (message == nil or message == "") then
-						print("Commit message is null")
+						vim.notify("Commit message was not typed", "warn")
 						return
 					end
 
@@ -18,7 +18,7 @@ return {
 			vim.keymap.set("n", "<leader>gc", function()
 				vim.ui.input({ prompt = "Commit message" }, function(message)
 					if (message == nil or message == "") then
-						print("Commit message is null")
+						vim.notify("Commit message was not typed", "warn")
 						return
 					end
 

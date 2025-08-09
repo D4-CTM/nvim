@@ -48,6 +48,7 @@ return {
 				"lemminx",
 				"lua_ls",
 				"clangd",
+				"cmake",
 				"cssls",
 				"gopls",
 				"jdtls",
@@ -60,7 +61,7 @@ return {
 			vim.keymap.set("n", "<leader>lx", function()
 				local clients = vim.lsp.get_clients()
 				if clients == nil or #clients == 0 then
-					print("No active lsp found")
+					vim.notify("No active lsp found", "warn")
 					return
 				end;
 
@@ -73,7 +74,7 @@ return {
 					if item == nil then return end
 
 					vim.lsp.stop_client(item.id)
-					print(item.name .. " stopped")
+					vim.notify(item.name .. " stopped", "info")
 				end)
 			end)
 
