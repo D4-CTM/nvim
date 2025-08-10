@@ -3,7 +3,7 @@ return {
 		"tpope/vim-fugitive",
 		config = function()
 			vim.keymap.set("n", "<leader>gu", function()
-				vim.ui.input({ prompt = "Commit message" }, function(message)
+				vim.ui.input({ prompt = "Git push. Commit msg:" }, function(message)
 					if (message == nil or message == "") then
 						vim.notify("Commit message was not typed", "warn")
 						return
