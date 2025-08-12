@@ -1,6 +1,8 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	dependencies = { "OXY2DEV/markview.nvim" },
 	build = ":TSUpdate",
+	lazy = false,
 	config = function()
 		local config = require("nvim-treesitter.configs")
 		config.setup({
@@ -15,18 +17,11 @@ return {
 				"zig",
 				"lua",
 			},
-			highlight = { enable = true },
+			highlight = { enable = false },
 			indent = { enable = true },
 			auto_install = true,
 			ignore_install = {},
 			modules = {},
 		})
-
-		vim.keymap.set("n", "F", function()
-			local savedCursor = vim.api.nvim_win_get_cursor(0)
-			vim.cmd("normal! gg")
-			vim.cmd("normal! =G")
-			vim.api.nvim_win_set_cursor(0, savedCursor)
-		end)
 	end,
 }
