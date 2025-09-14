@@ -44,17 +44,14 @@ return {
 			vim.lsp.enable({
 				"arduino_language_server",
 				"omnisharp",
-				"spectral",
 				"lemminx",
 				"lua_ls",
 				"clangd",
-				"cmake",
 				"cssls",
 				"gopls",
 				"jdtls",
 				"ts_ls",
 				"html",
-				"sqls",
 				"zls"
 			})
 

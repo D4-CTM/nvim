@@ -4,7 +4,7 @@ return {
 		config = function()
 			require("onedark").setup({
 				style = "deep",
-				transparent = true,
+				transparent = false,
 				code_style = {
 					keywords = "bold",
 					functions = "bold",
